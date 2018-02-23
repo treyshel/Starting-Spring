@@ -65,4 +65,14 @@ public class ArraysAndLoops {
         }
         return result.trim();
     }
+    @GetMapping ("/parseInventory")
+    public String parseInventory(@RequestParam String parse) {
+        String[] inventory = parse.split("\t");
+        String result = "";
+        result += ("Item: " + inventory[0] + ", ");
+        result += ("Price Paid: " + inventory[1]) + ", ";
+        result += ("Item Cost: " + inventory[2]);
+        return result;
+    }
+
 }
